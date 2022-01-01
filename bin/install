@@ -3,11 +3,20 @@
 set -e
 set -o pipefail
 
+get_arch() {
+  if [[ "$(uname -m)" == "x86_64" ]]; then
+    echo "amd64"
+  else
+    echo "arm64"
+  fi
+}
+
 install_kubeval() {
   local install_type=$1
   local version=$2
   local install_path=$3
-  local platform="$(uname | tr '[:upper:]' '[:lower:]')-amd64"
+  local arch="$(get_arch)"
+  local platform="$(uname | tr '[:upper:]' '[:lower:]')-${arch}"
   local bin_install_path="$install_path/bin"
   local binary_path="$bin_install_path/kubeval"
   local download_url=$(get_download_url $version $platform)
