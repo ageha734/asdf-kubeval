@@ -57,7 +57,7 @@ get_download_url() {
   local platform="$2"
   local filename="$(get_filename $version $platform)"
 
-  echo "https://github.com/instrumenta/kubeval/releases/download/${version}/${filename}"
+  echo "https://github.com/instrumenta/kubeval/releases/download/v${version}/${filename}"
 }
 
 install_kubeval $ASDF_INSTALL_TYPE $ASDF_INSTALL_VERSION $ASDF_INSTALL_PATH
