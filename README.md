@@ -6,8 +6,13 @@
 
 ## Install
 
+```bash
+asdf plugin-add kubeval https://github.com/ageha734/asdf-kubeval
 ```
-asdf plugin-add kubeval https://github.com/stefansedich/asdf-kubeval
+
+```bash
+mise plugin remove kubeval
+mise plugin add kubeval https://github.com/ageha734/asdf-kubeval
 ```
 
 ## Use
